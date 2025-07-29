@@ -11,6 +11,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.fitcraft.ui.components.BottomNavigationBar
+import com.example.fitcraft.ui.screens.splash.SplashScreen
 import com.example.fitcraft.ui.theme.FitCraftTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,7 +21,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             FitCraftTheme {
-
+                SplashScreen()
             }
         }
     }

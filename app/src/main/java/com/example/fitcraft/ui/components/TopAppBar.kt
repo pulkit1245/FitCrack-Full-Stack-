@@ -1,12 +1,13 @@
 package com.example.fitcraft.ui.components
 
 //noinspection UsingMaterialAndMaterial3Libraries
-import androidx.compose.material.TopAppBar
 
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountBox
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -21,8 +22,10 @@ import androidx.compose.ui.unit.dp
 import com.example.fitcraft.ui.theme.headerStyle
 
 @Composable
-fun TopAppBar(title: String) {
-    TopAppBar (
+fun TopAppBar(
+    title: String,
+) {
+    TopAppBar(
         modifier = Modifier.heightIn(80.dp),
         title = {
             Text(
@@ -33,19 +36,30 @@ fun TopAppBar(title: String) {
             )
         },
         actions = {
-            IconButton(onClick = { /* Handle action */ }) {
-                Icon(
-                    Icons.Default.Notifications,
-                    modifier = Modifier.size(30.dp),
-                    contentDescription = "Notifications"
-                )
-            }
-        },
-        backgroundColor = Color.Transparent,/*MaterialTheme.colorScheme.background*/ // Example: Customize background color
+                IconButton(onClick = { /* Notification Settings I think but
+                                        no use if possible we can remove this */ }) {
+                    Icon(
+                        Icons.Default.Notifications,
+                        modifier = Modifier.size(30.dp),
+                        contentDescription = "Notifications"
+                    )
+                }
+                IconButton(onClick = { /* Sign in Screen */ }) {
+                    Icon(
+                        Icons.Default.AccountBox,
+                        modifier = Modifier.size(30.dp),
+                        contentDescription = "Notifications"
+                    )
+                }
+            },
+        backgroundColor =
+            Color.Transparent,
+        /*MaterialTheme.colorScheme.background*/ // Example: Customize background color
         contentColor = Color.Black,   // Example: Customize content color (title, icons)
         elevation = 4.dp,              // Example: Customize elevation
     )
 }
+
 @Preview
 @Composable
 fun TopAppBarPreview() {

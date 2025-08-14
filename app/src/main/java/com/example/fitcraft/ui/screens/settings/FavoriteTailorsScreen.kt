@@ -60,7 +60,7 @@ fun FavoriteTailorsScreen() {
                 title = { Text("Favorite Tailors", fontWeight = FontWeight.Bold) },
                 navigationIcon = {
                     IconButton(onClick = { /*TODO*/ }) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
                     }
                 },
             )

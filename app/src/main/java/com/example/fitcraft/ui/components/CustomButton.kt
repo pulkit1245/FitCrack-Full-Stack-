@@ -29,6 +29,7 @@ fun CustomButton(
     borderColor: Color = Color.Black,
     borderWidth: Dp = 1.dp,
     buttonColor: Color = Color(0xFF311B92),
+    enabled: Boolean = true,
     onClick: () -> Unit,
 ) {
     Surface(
@@ -38,6 +39,7 @@ fun CustomButton(
     {
         Button(
             onClick = onClick,
+            enabled = enabled,
             modifier = modifier
                 .background(Color.Transparent),
             shape = shape,
@@ -69,12 +71,13 @@ fun CustomButton(
 private fun CustomButtonPreview() {
     Column(Modifier.fillMaxSize()) {
         CustomButton(
-            modifier = Modifier,
             buttonText = "Test Button",
             buttonColor = Color(0xFF4A148C),
-        ) { }
+            onClick = { },
+        )
         CustomButton(
             buttonText = "Book Now",
-        ) { }
+            onClick = { },
+        )
     }
 }

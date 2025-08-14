@@ -61,7 +61,11 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    implementation("androidx.compose.material:material:1.8.3")
+    implementation(libs.androidx.material.icons.extended) // extended Material Icons
+    implementation(libs.material) // changed to library catalog declaration
+
+    implementation(libs.androidx.runtime.livedata)// for the Integration of LiveData into UI smoothly
+
     // ========================= Hilt (Dependency Injection) =========================
     implementation("com.google.dagger:hilt-android:2.57")
     kapt("com.google.dagger:hilt-android-compiler:2.57")

@@ -20,7 +20,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
@@ -34,7 +33,7 @@ import com.example.fitcraft.ui.theme.headerStyle
 fun SignUpScreenCard(
     mainText: String = "mainText is not set",
     subText: String = "subText is not set",
-    image: Any = Icons.Default.AccountCircle ,
+    image: Any = Icons.Default.AccountCircle,
     colorChangingButtonText: String = "colorChangingButtonText is not set",
     onClickListener: () -> Unit = {},
 ) {
@@ -50,7 +49,7 @@ fun SignUpScreenCard(
             )
             .clip(RoundedCornerShape(60f, 60f, 50f, 50f))
             .clickable(
-                onClick = {onClickListener()},
+                onClick = { onClickListener() },
                 onClickLabel = "Sign Up for Customer",
             ),
         cardColor = MaterialTheme.colorScheme.surfaceContainer
@@ -63,7 +62,7 @@ fun SignUpScreenCard(
                 .padding(10.dp)
                 .padding(top = 20.dp, start = 20.dp, end = 20.dp, bottom = 10.dp),
         ) {
-            if (image is ImageVector){
+            if (image is ImageVector) {
                 Icon(
                     imageVector = image,
                     modifier = Modifier
@@ -71,7 +70,7 @@ fun SignUpScreenCard(
                         .padding(10.dp),
                     contentDescription = "Sign Up",
                 )
-            }else if(image is Int){
+            } else if (image is Int) {
                 Icon(
                     painter = painterResource(id = image),
                     modifier = Modifier
@@ -100,7 +99,12 @@ fun SignUpScreenCard(
 
             Spacer(Modifier.padding(10.dp))
 
-            ColorChangingButton(MaterialTheme.colorScheme.surfaceContainer, MaterialTheme.colorScheme.onSecondaryContainer, colorChangingButtonText,onClickListener)
+            ColorChangingButton(
+                defaultColor = MaterialTheme.colorScheme.surfaceContainer,
+                touchedColor = MaterialTheme.colorScheme.onSecondaryContainer,
+                text = colorChangingButtonText,
+            )
+            { onClickListener() }
         }
     }
 }

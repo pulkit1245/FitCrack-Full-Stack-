@@ -53,47 +53,50 @@ fun BookingScreenContent() {
             .verticalScroll(verticalScroll)
     ) {
         CustomButton(
-            buttonColor = buttonColor,
             modifier = Modifier
                 .fillMaxWidth(1f),
             shape = RoundedCornerShape(10.dp),
-            borderWidth = (2.5).dp,
-            borderColor = Color.Black,
             buttonText = "Book New Appointment",
-        ) { }
+            borderWidth = (2.5).dp,
+            buttonColor = buttonColor,
+            onClick = { }
+        )
         Row(
             modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
             CustomButton(
-                buttonColor = buttonColor,
                 modifier = Modifier
                     .weight(1f)
                     .scale(0.90f),
                 shape = RoundedCornerShape(8.dp),
-                borderWidth = 1.5.dp,
-                borderColor = MaterialTheme.colorScheme.outline,
                 buttonText = "Upcoming",
-            ) { }
+                borderColor = MaterialTheme.colorScheme.outline,
+                borderWidth = 1.5.dp,
+                buttonColor = buttonColor,
+                onClick = { },
+            )
             CustomButton(
                 modifier = Modifier
                     .weight(1f)
                     .scale(0.90f),
+                shape = RoundedCornerShape(8.dp),
                 buttonText = "Pending",
-                shape = RoundedCornerShape(8.dp),
-                borderWidth = 1.5.dp,
                 borderColor = MaterialTheme.colorScheme.outline,
-            ) { }
+                borderWidth = 1.5.dp,
+                onClick = { },
+            )
             CustomButton(
                 modifier = Modifier
                     .weight(1f)
                     .scale(0.90f),
                 shape = RoundedCornerShape(8.dp),
-                borderWidth = 1.5.dp,
-                borderColor = MaterialTheme.colorScheme.outline,
                 buttonText = "Completed",
-            ) { }
+                borderColor = MaterialTheme.colorScheme.outline,
+                borderWidth = 1.5.dp,
+                onClick = { },
+            )
         }
     }
 }

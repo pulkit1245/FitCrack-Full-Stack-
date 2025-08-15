@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.dp
 fun ColorChangingButton(
     defaultColor: Color = Color.Blue,
     touchedColor: Color = Color.Red,
+    enabled: Boolean = true,
     text: String,
     onClickListener: () -> Unit,
 ) {
@@ -28,6 +29,7 @@ fun ColorChangingButton(
     Button(
         onClick = { onClickListener },
         modifier = Modifier,
+        enabled = enabled,
         shape = RoundedCornerShape(5.dp),
         elevation = ButtonDefaults.elevatedButtonElevation(
             defaultElevation = 4.dp,
